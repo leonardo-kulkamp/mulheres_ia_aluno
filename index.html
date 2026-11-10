@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pioneiras da Tecnologia | Plataforma Interativa</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+
+    <!-- Header / Navbar perfeitamente alinhado -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Pioneiras.tech</span>
+            </div>
+            <button id="theme-toggle" class="theme-btn" aria-label="Alternar Tema">
+                <span id="theme-icon">🌙</span>
+                <span id="theme-text">Modo Escuro</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Banner Hero -->
+    <section class="hero">
+        <div class="hero-badge">História &amp; Tecnologia</div>
+        <h1 id="main-title">As Mulheres que Construíram a Era Digital</h1>
+        <p class="hero-subtitle">Conheça as mentes brilhantes que transformaram a matemática, a computação e a exploração espacial.</p>
+    </section>
+
+    <!-- Conteúdo Principal -->
+    <main class="container">
+        <!-- Cards Grid -->
+        <div class="cards-grid">
+            <article class="card" onclick="showPerson('ada')">
+                <div class="card-image-wrap">
+                    <img src="ada.jpg" alt="Ada Lovelace">
+                    <span class="card-badge">Século XIX</span>
+                </div>
+                <div class="card-content">
+                    <span class="tag">1ª Programadora</span>
+                    <h3>Ada Lovelace</h3>
+                    <p>Criou o primeiro algoritmo para ser processado por uma máquina na história humana.</p>
+                    <span class="btn-card">Ver História Completa →</span>
+                </div>
+            </article>
+
+            <article class="card" onclick="showPerson('grace')">
+                <div class="card-image-wrap">
+                    <img src="grace.jpg" alt="Grace Hopper">
+                    <span class="card-badge">Marinha EUA</span>
+                </div>
+                <div class="card-content">
+                    <span class="tag">Mãe do COBOL</span>
+                    <h3>Grace Hopper</h3>
+                    <p>Criou o primeiro compilador e transformou códigos numéricos em linguagem humana.</p>
+                    <span class="btn-card">Ver História Completa →</span>
+                </div>
+            </article>
+
+            <article class="card" onclick="showPerson('margaret')">
+                <div class="card-image-wrap">
+                    <img src="margaret.jpg" alt="Margaret Hamilton">
+                    <span class="card-badge">NASA Apollo 11</span>
+                </div>
+                <div class="card-content">
+                    <span class="tag">Engenharia de Software</span>
+                    <h3>Margaret Hamilton</h3>
+                    <p>Diretora de software do MIT que garantiu o pouso seguro da Apollo 11 na Lua.</p>
+                    <span class="btn-card">Ver História Completa →</span>
+                </div>
+            </article>
+
+            <article class="card" onclick="showPerson('dorothy')">
+                <div class="card-image-wrap">
+                    <img src="dorothy.jpg" alt="Dorothy Vaughan">
+                    <span class="card-badge">Pioneira NASA</span>
+                </div>
+                <div class="card-content">
+                    <span class="tag">Líder &amp; Autodidata</span>
+                    <h3>Dorothy Vaughan</h3>
+                    <p>Primeira supervisora negra da NASA e especialista pioneira na linguagem FORTRAN.</p>
+                    <span class="btn-card">Ver História Completa →</span>
+                </div>
+            </article>
+        </div>
+
+        <!-- Seção de Detalhes Dinâmicos (SPA) -->
+        <div id="detail-view" class="detail-view hidden">
+            <button class="btn-back" onclick="hideDetail()">← Voltar à Lista</button>
+
+            <!-- Ada Lovelace -->
+            <div id="ada-content" class="bio-content hidden">
+                <div class="bio-header">
+                    <img src="ada.jpg" alt="Ada Lovelace" class="bio-img">
+                    <div class="bio-intro">
+                        <h2>Ada Augusta King</h2>
+                        <span class="sub-bio">Condessa de Lovelace (1815 – 1852)</span>
+                        <div class="quote-box">
+                            "A imaginação é a faculdade das descobertas. É ela que penetra nos mundos invisíveis ao nosso redor."
+                        </div>
+                    </div>
+                </div>
+                <div class="stats-row">
+                    <div class="stat-box"><h4>1843</h4><p>1º Algoritmo do Mundo</p></div>
+                    <div class="stat-box"><h4>Visão 360°</h4><p>Criou o conceito de Software</p></div>
+                    <div class="stat-box"><h4>Homenagem</h4><p>Linguagem ADA</p></div>
+                </div>
+                <div class="text-body">
+                    <p>Ada Augusta King, Condessa de Lovelace (Byron, 1815 - 1852), foi uma matemática e escritora inglesa. Ela foi a primeira a reconhecer que máquinas poderiam ter aplicações além de puros cálculos e criou o primeiro algoritmo para ser processado por uma máquina, a máquina analítica de Charles Babbage.</p>
+                    <p>Durante o período em que esteve envolvida com o projeto de Babbage, ela desenvolveu os algoritmos que permitiriam a máquina computar os valores de funções matemáticas, além de publicar uma coleção de notas sobre a máquina analítica.</p>
+                    <p>Por esse trabalho é considerada a primeira programadora de computadores de toda a história. Vale lembrar que ela escreveu o programa em um papel, com as instruções de como programar a máquina analítica, que nunca chegou a ser construída em seu tempo de vida. A Ada é até mesmo uma referência da cultura pop.</p>
+                </div>
+            </div>
+
+            <!-- Grace Hopper -->
+            <div id="grace-content" class="bio-content hidden">
+                <div class="bio-header">
+                    <img src="grace.jpg" alt="Grace Hopper" class="bio-img">
+                    <div class="bio-intro">
+                        <h2>Grace Murray Hopper</h2>
+                        <span class="sub-bio">Contra-Almirante da Marinha dos EUA (1906 – 1992)</span>
+                        <div class="quote-box">
+                            "É mais fácil pedir perdão do que pedir permissão."
+                        </div>
+                    </div>
+                </div>
+                <div class="stats-row">
+                    <div class="stat-box"><h4>A-0 System</h4><p>Criou o 1º Compilador</p></div>
+                    <div class="stat-box"><h4>COBOL</h4><p>Linguagem Global de Negócios</p></div>
+                    <div class="stat-box"><h4>Bug</h4><p>Popularizou o Termo na Computação</p></div>
+                </div>
+                <div class="text-body">
+                    <p>Grace Murray Hopper (Nova Iorque, 1906 - 1992) foi Ph.D. em Matemática, analista de sistemas da Marinha dos Estados Unidos nas décadas de 1940 e 1950 e almirante.</p>
+                    <p>Foi ela quem criou a linguagem de programação Flow-Matic (hoje extinta) que serviu como base para a criação da linguagem COBOL (Common Business Oriented Language) devido a necessidade de criar uma linguagem orientada para negócios comuns. Pois é! Essa linguagem que domina muitas áreas dos grandes bancos tem uma mulher com papel de protagonista.</p>
+                    <p>No começo dos anos 1950 ela desenvolveu um compilador operacional, naquela época acreditava-se que computadores só podiam realizar operações aritméticas. Depois como diretora de programação automática, seu departamento divulgou algumas das primeiras linguagens de programação baseadas em compilador. Isso mesmo: considerada uma das mães dos compiladores.</p>
+                </div>
+            </div>
+
+            <!-- Margaret Hamilton -->
+            <div id="margaret-content" class="bio-content hidden">
+                <div class="bio-header">
+                    <img src="margaret.jpg" alt="Margaret Hamilton" class="bio-img">
+                    <div class="bio-intro">
+                        <h2>Margaret Heafield Hamilton</h2>
+                        <span class="sub-bio">Diretora de Software da NASA / MIT (1936 – Presente)</span>
+                        <div class="quote-box">
+                            "Não havia escolha a não ser ser pioneira. Não havia escola para aprender o que estávamos fazendo."
+                        </div>
+                    </div>
+                </div>
+                <div class="stats-row">
+                    <div class="stat-box"><h4>Apollo 11</h4><p>Software de Voo Seguro</p></div>
+                    <div class="stat-box"><h4>Engenharia</h4><p>Cunhou o termo Engenharia de Software</p></div>
+                    <div class="stat-box"><h4>Honraria</h4><p>Medalha Presidencial da Liberdade</p></div>
+                </div>
+                <div class="text-body">
+                    <p>Margaret Heafield Hamilton (Paoli, 1936) é matemática, cientista da computação, engenheira de software e empresária.</p>
+                    <p>Foi diretora da Divisão de Software no Laboratório de Instrumentação do MIT, que desenvolveu o programa de voo usado no projeto Apollo 11, software que impediu que o pouso na Lua fosse abortado por falha humana. Você entendeu bem: sem o programa que ela escreveu, nada de 'pequeno passo para o homem, grande passo para a humanidade'. Foi um grande passo para as mulheres também.</p>
+                    <p>Em 1986 ela fundou sua própria empresa, a Hamilton Technologies Inc com sede em Cambridge. Onde desenvolveu seu paradigma para Sistemas e Design de Software, o Development Before the Fact.</p>
+                    <p>Além de ser creditada por ter criado o termo 'engenharia de software', foi uma das desenvolvedoras dos conceitos de computação paralela, priority scheduling, teste de sistema, e capacidade de decisão com integração humana.</p>
+                </div>
+            </div>
+
+            <!-- Dorothy Vaughan -->
+            <div id="dorothy-content" class="bio-content hidden">
+                <div class="bio-header">
+                    <img src="dorothy.jpg" alt="Dorothy Vaughan" class="bio-img">
+                    <div class="bio-intro">
+                        <h2>Dorothy Johnson Vaughan</h2>
+                        <span class="sub-bio">Líder de Análise Computacional da NASA (1910 – 2008)</span>
+                        <div class="quote-box">
+                            "Mudei o que pude e o que não pude, suportei."
+                        </div>
+                    </div>
+                </div>
+                <div class="stats-row">
+                    <div class="stat-box"><h4>28 Anos</h4><p>Carreira Brilhante na NASA</p></div>
+                    <div class="stat-box"><h4>FORTRAN</h4><p>Especialista Autodidata</p></div>
+                    <div class="stat-box"><h4>Cinema</h4><p>Retratada em Estrelas Além do Tempo</p></div>
+                </div>
+                <div class="text-body">
+                    <p>Dorothy Johnson Vaughan, nascida em Kansas City, 1910, foi matemática graduada pela Wilberforce University.</p>
+                    <p>Durante seus 28 anos de carreira na NASA, foi chefe de um grupo de trabalho formado apenas por mulheres negras e matemáticas, e tornou-se a primeira supervisora negra.</p>
+                    <p>Autodidata, especializou-se na linguagem de programação FORTRAN, e por isto liderou a seção de programação da Divisão de Análise e Computação do Langley Research Center. Não é coisa pouca! Quem nunca sonhou em ser programadora na NASA? A Dorothy realizou essa tarefa e participou de projetos muito importantes.</p>
+                    <p>Além disso, ela também é uma das mulheres destacadas na história Estrelas Além do Tempo (Hidden Figures) que foi lançado nos cinemas.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <!-- Rodapé do Projeto -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>Projeto desenvolvido por <strong>Leonardo Kulkamp</strong></p>
+            <p class="school-name">Colégio Profª Reni Correia Gamper</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+</body>
+</html>

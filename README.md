@@ -1,1 +1,2 @@
-# mulheres_ia_aluno
+# mulheres_tecnologia
+Site para ser finalizado pelos estudantes. 
